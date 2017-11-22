@@ -409,7 +409,8 @@ for (i in 1:length(packages)) {
                          ')+in:file+language:R+extension:R+extension:Rmd'), 
                    .token = gh_token)
        
-  test_pks[[i]] <- list(target = lapply(unique(sapply(repos$items, function(x)x$repository$html_url)), 
+  test_pks[[i]] <- list(target = lapply(unique(sapply(repos$items, 
+                                                      function(x)x$repository$html_url)), 
                                         function(y) { list(value = y, type = 'URL')}),
                         body = list(body = list(value = paste0('http://github.com/ropensci/',x), 
                                                 type = 'URL'),
